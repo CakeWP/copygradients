@@ -7,22 +7,58 @@
 			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
 		},
 		{
-			"css": "linear-gradient(90deg,rgb(255,0,128) 0%,rgb(255,140,0) 47%,rgb(64,224,208) 100%)"
+			"css": "linear-gradient(135deg,rgb(44,83,100) 0%,rgb(32,58,67) 50%,rgb(15,32,39) 100%)"
 		},
 		{
-			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
+			"css": "linear-gradient(90deg,rgb(255,81,47) 0%,rgb(221,36,118) 51%,rgb(255,81,47) 100%)"
 		},
 		{
-			"css": "linear-gradient(90deg,rgb(255,0,128) 0%,rgb(255,140,0) 47%,rgb(64,224,208) 100%)"
+			"css": "linear-gradient(150deg,rgb(233, 161, 163) 50%,rgb(196, 228, 223) 50%)"
 		},
 		{
-			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
+			"css": "linear-gradient(90deg,rgb(245,152,168) 0%,rgb(246,237,178) 100%)"
 		},
 		{
-			"css": "linear-gradient(90deg,rgb(255,0,128) 0%,rgb(255,140,0) 47%,rgb(64,224,208) 100%)"
+			"css": "linear-gradient(90deg,rgb(238,92,135) 0%,rgb(241,164,181) 50%,rgb(213,135,179) 100%)"
 		},
 		{
-			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
+			"css": "linear-gradient(100deg,rgb(242,103,152) 0%,rgb(48,35,174) 100%)"
+		},
+		{
+			"css": "linear-gradient(130deg,rgb(191,117,165) 0%,rgb(186,217,223) 100%)"
+		},
+		{
+			"css": "linear-gradient(135deg,rgb(167,55,55) 0%,rgb(122,40,40) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(79,251,223) 0%,rgb(196,147,255) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(7, 81, 84) 70%,rgb(255,255,255) 70%)"
+		},
+		{
+			"css": "linear-gradient(142deg, rgb(215, 0, 39), rgb(115, 0, 165))"
+		},
+		{
+			"css": "linear-gradient(142deg,rgb(22,160,133) 0%,rgb(244,208,63) 100%)"
+		},
+		{
+			"css": "linear-gradient(45deg, rgb(29, 107, 241) 0%, rgb(20, 229, 132) 100%)"
+		},
+		{
+			"css": "linear-gradient(330deg,rgb(58,28,113) 0%,rgb(215,109,119) 50%,rgb(255,175,123) 100%)"
+		},
+		{
+			"css": "linear-gradient(180deg,rgb(254,100,121) 0%,rgb(251,221,186) 100%)"
+		},
+		{
+			"css": "linear-gradient(150deg,rgb(254, 248, 228) 25%,rgb(252, 238, 203) 25%,rgb(252, 238, 203) 75%,rgb(254, 248, 228) 33%)"
+		},
+		{
+			"css": "linear-gradient(165deg, rgb(21, 26, 35) 85%, rgb(255, 216, 151) 85%)"
+		},
+		{
+			"css": "linear-gradient(130deg,rgb(61, 15, 102) 30%,rgb(255, 255, 255) 30%)"
 		}
 	],
 	"radial":[]

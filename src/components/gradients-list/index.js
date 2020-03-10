@@ -38,6 +38,9 @@ class GradientsList extends Component {
 
 	categorizedData(){
 		map(data, ( gradients, type ) => {
+			gradients.sort(function() {
+				return .5 - Math.random();
+			});
 			this.setState({ [type]: gradients });
 		})
 	}
