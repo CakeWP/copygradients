@@ -5,6 +5,24 @@
 		},
 		{
 			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(255,0,128) 0%,rgb(255,140,0) 47%,rgb(64,224,208) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(255,0,128) 0%,rgb(255,140,0) 47%,rgb(64,224,208) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(255,0,128) 0%,rgb(255,140,0) 47%,rgb(64,224,208) 100%)"
+		},
+		{
+			"css": "linear-gradient(90deg,rgb(242,201,76) 0%,rgb(242,153,74) 100%)"
 		}
 	],
 	"radial":[]

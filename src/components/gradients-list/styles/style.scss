@@ -1,5 +1,4 @@
 .gradients-list{
-	padding: 20px;
 	.gradient{
 		display: block;
 		width: 100%;
@@ -7,6 +6,9 @@
 	}
 
 	.gradient--colors{
+		> span:first-of-type{
+			width: 100%;
+		}
 		.arrow{
 			color: #444;
 			padding: 0 5px;

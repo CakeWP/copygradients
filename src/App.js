@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import GradientsList from "./components/gradients-list";
+import Header from './components/header';
 function App() {
 	return (
-		<div className="App">
-			<GradientsList />
-		</div>
-	);
+		<Fragment>
+			<Header />
+			<div className="App">
+				<GradientsList />
+			</div>
+		</Fragment>
+  );
 }
 export default App;
