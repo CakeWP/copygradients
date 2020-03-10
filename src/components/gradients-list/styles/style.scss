@@ -1,21 +1,24 @@
-.gradients-list{
-	.gradient{
+.gradients-list {
+
+	.gradient {
 		display: block;
 		width: 100%;
 		height: 200px;
 	}
 
-	.gradient--colors{
-		> span:first-of-type{
+	.gradient--colors {
+
+		> span:first-of-type {
 			width: 100%;
 		}
-		.arrow{
+
+		.arrow {
 			color: #444;
 			padding: 0 5px;
 		}
 	}
 
-	.gradient--inner{
+	.gradient--inner {
 		height: 100%;
 	}
 }

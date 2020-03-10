@@ -1,25 +1,25 @@
 /**
  * External dependencies
  */
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
 import {
   Modal,
-  Button,
-//   __experimentalCustomGradientPicker as GradientPicker
-} from '@wordpress/components';
+  Button
+  //   __experimentalCustomGradientPicker as GradientPicker
+} from "@wordpress/components";
 
 /**
  * Internal dependencies
  */
-import './styles/style.scss';
-import GradientPicker from '../gradient-picker';
+import "./styles/style.scss";
+import GradientPicker from "../gradient-picker";
 
 class GradientBuilder extends Component {
   constructor() {
     super(...arguments);
 
     this.state = {
-      value: 'linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)'
+      value: "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)"
     };
   }
   render() {

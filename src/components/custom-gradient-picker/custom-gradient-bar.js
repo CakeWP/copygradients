@@ -1,32 +1,32 @@
 /**
  * External dependencies
  */
-import React from 'react';
-import { some } from 'lodash';
-import classnames from 'classnames';
+import React from "react";
+import { some } from "lodash";
+import classnames from "classnames";
 
 /**
  * WordPress dependencies
  */
-import { useRef, useReducer, useState } from '@wordpress/element';
-import { plusCircle } from '@wordpress/icons';
+import { useRef, useReducer, useState } from "@wordpress/element";
+import { plusCircle } from "@wordpress/icons";
 import {
   Button,
   ColorPicker,
   Dropdown,
   KeyboardShortcuts
-} from '@wordpress/components';
+} from "@wordpress/components";
 
 /**
  * Internal dependencies
  */
-import ControlPoints from './control-points';
+import ControlPoints from "./control-points";
 import {
   INSERT_POINT_WIDTH,
   COLOR_POPOVER_PROPS,
   MINIMUM_DISTANCE_BETWEEN_POINTS
-} from './constants';
-import { serializeGradient } from './serializer';
+} from "./constants";
+import { serializeGradient } from "./serializer";
 import {
   getGradientWithColorAtPositionChanged,
   getGradientWithColorStopAdded,
@@ -34,7 +34,7 @@ import {
   getMarkerPoints,
   getGradientParsed,
   getLinearGradientRepresentationOfARadial
-} from './utils';
+} from "./utils";
 
 function InsertPoint({
   onChange,
@@ -88,66 +88,66 @@ function InsertPoint({
         />
       )}
       popoverProps={{
-		className: 'components-custom-gradient-picker__color-picker-popover',
-		position: 'top',
-		onFocusOutside: ()=>{
-			onCloseInserter();
-		}
-		}}
+        className: "components-custom-gradient-picker__color-picker-popover",
+        position: "top",
+        onFocusOutside: () => {
+          onCloseInserter();
+        }
+      }}
     />
   );
 }
 
 function customGradientBarReducer(state, action) {
   switch (action.type) {
-    case 'MOVE_INSERTER':
-      if (state.id === 'IDLE' || state.id === 'MOVING_INSERTER') {
+    case "MOVE_INSERTER":
+      if (state.id === "IDLE" || state.id === "MOVING_INSERTER") {
         return {
-          id: 'MOVING_INSERTER',
+          id: "MOVING_INSERTER",
           insertPosition: action.insertPosition
         };
       }
       break;
-    case 'STOP_INSERTER_MOVE':
-      if (state.id === 'MOVING_INSERTER') {
+    case "STOP_INSERTER_MOVE":
+      if (state.id === "MOVING_INSERTER") {
         return {
-          id: 'IDLE'
+          id: "IDLE"
         };
       }
       break;
-    case 'OPEN_INSERTER':
-      if (state.id === 'MOVING_INSERTER') {
+    case "OPEN_INSERTER":
+      if (state.id === "MOVING_INSERTER") {
         return {
-          id: 'INSERTING_CONTROL_POINT',
+          id: "INSERTING_CONTROL_POINT",
           insertPosition: state.insertPosition
         };
       }
       break;
-    case 'CLOSE_INSERTER':
-      if (state.id === 'INSERTING_CONTROL_POINT') {
+    case "CLOSE_INSERTER":
+      if (state.id === "INSERTING_CONTROL_POINT") {
         return {
-          id: 'IDLE'
+          id: "IDLE"
         };
       }
       break;
-    case 'START_CONTROL_CHANGE':
-      if (state.id === 'IDLE') {
+    case "START_CONTROL_CHANGE":
+      if (state.id === "IDLE") {
         return {
-          id: 'MOVING_CONTROL_POINT'
+          id: "MOVING_CONTROL_POINT"
         };
       }
       break;
-    case 'STOP_CONTROL_CHANGE':
-      if (state.id === 'MOVING_CONTROL_POINT') {
+    case "STOP_CONTROL_CHANGE":
+      if (state.id === "MOVING_CONTROL_POINT") {
         return {
-          id: 'IDLE'
+          id: "IDLE"
         };
       }
       break;
   }
   return state;
 }
-const customGradientBarReducerInitialState = { id: 'IDLE' };
+const customGradientBarReducerInitialState = { id: "IDLE" };
 
 export default function CustomGradientBar({ value, onChange }) {
   const { gradientAST, gradientValue, hasGradient } = getGradientParsed(value);
@@ -179,28 +179,28 @@ export default function CustomGradientBar({ value, onChange }) {
         );
       })
     ) {
-      if (gradientBarState.id === 'MOVING_INSERTER') {
-        gradientBarStateDispatch({ type: 'STOP_INSERTER_MOVE' });
+      if (gradientBarState.id === "MOVING_INSERTER") {
+        gradientBarStateDispatch({ type: "STOP_INSERTER_MOVE" });
       }
       return;
     }
 
-    gradientBarStateDispatch({ type: 'MOVE_INSERTER', insertPosition });
+    gradientBarStateDispatch({ type: "MOVE_INSERTER", insertPosition });
   };
 
   const onMouseLeave = () => {
-    gradientBarStateDispatch({ type: 'STOP_INSERTER_MOVE' });
+    gradientBarStateDispatch({ type: "STOP_INSERTER_MOVE" });
   };
 
-  const isMovingInserter = gradientBarState.id === 'MOVING_INSERTER';
+  const isMovingInserter = gradientBarState.id === "MOVING_INSERTER";
   const isInsertingControlPoint =
-    gradientBarState.id === 'INSERTING_CONTROL_POINT';
+    gradientBarState.id === "INSERTING_CONTROL_POINT";
 
   return (
     <div
       ref={gradientPickerDomRef}
-      className={classnames('components-custom-gradient-picker__gradient-bar', {
-        'has-gradient': hasGradient
+      className={classnames("components-custom-gradient-picker__gradient-bar", {
+        "has-gradient": hasGradient
       })}
       onMouseEnter={onMouseEnterAndMove}
       onMouseMove={onMouseEnterAndMove}
@@ -208,7 +208,7 @@ export default function CustomGradientBar({ value, onChange }) {
       // On radial gradients the bar represents a slice of the gradient from the center until the outside.
       style={{
         background:
-          gradientAST.type === 'radial-gradient'
+          gradientAST.type === "radial-gradient"
             ? getLinearGradientRepresentationOfARadial(gradientAST)
             : gradientValue
       }}
@@ -222,12 +222,12 @@ export default function CustomGradientBar({ value, onChange }) {
             gradientAST={gradientAST}
             onOpenInserter={() => {
               gradientBarStateDispatch({
-                type: 'OPEN_INSERTER'
+                type: "OPEN_INSERTER"
               });
             }}
             onCloseInserter={() => {
               gradientBarStateDispatch({
-                type: 'CLOSE_INSERTER'
+                type: "CLOSE_INSERTER"
               });
             }}
           />
@@ -244,12 +244,12 @@ export default function CustomGradientBar({ value, onChange }) {
           gradientAST={gradientAST}
           onStartControlPointChange={() => {
             gradientBarStateDispatch({
-              type: 'START_CONTROL_CHANGE'
+              type: "START_CONTROL_CHANGE"
             });
           }}
           onStopControlPointChange={() => {
             gradientBarStateDispatch({
-              type: 'STOP_CONTROL_CHANGE'
+              type: "STOP_CONTROL_CHANGE"
             });
           }}
         />

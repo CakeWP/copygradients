@@ -4,7 +4,6 @@
 @import "node_modules/@wordpress/base-styles/breakpoints";
 @import "node_modules/@wordpress/base-styles/animations";
 @import "node_modules/@wordpress/base-styles/z-index";
-
 @import "node_modules/@wordpress/components/src/base-control/style.scss";
 @import "node_modules/@wordpress/components/src/popover/style.scss";
 @import "node_modules/@wordpress/components/src/tooltip/style.scss";
@@ -13,51 +12,52 @@
 @import "node_modules/@wordpress/components/src/angle-picker-control/style.scss";
 @import "node_modules/@wordpress/components/src/toolbar-group/style.scss";
 @import "node_modules/@wordpress/components/src/color-picker/style.scss";
-
 @import "src/components/custom-gradient-picker/style.scss";
 
 .components-visually-hidden {
-    border: 0;
-    clip: rect(1px,1px,1px,1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    word-wrap: normal!important;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
 }
 
-.screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible {
-    border: 0;
-    clip: rect(1px,1px,1px,1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    word-wrap: normal!important;
+.screen-reader-text,
+.screen-reader-text span,
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
 }
 
-.gradient-preview{
+.gradient-preview {
 	max-height: calc(100% - 70px);
 }
 
-.components-angle-picker-control__input-field{
+.components-angle-picker-control__input-field {
 	box-shadow: 0 0 0 transparent;
-    border-radius: 4px;
-    border: 1px solid #7e8993;
-    background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #7e8993;
+	background-color: #fff;
 	color: #32373c;
 	min-height: 30px;
 	padding: 6px 8px;
 }
 
 .components-popover:not(.is-without-arrow)[data-y-axis="bottom"] {
-    // margin-top: -40px;
+	// margin-top: -40px;
 }

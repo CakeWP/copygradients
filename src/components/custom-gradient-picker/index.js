@@ -1,35 +1,35 @@
 /**
  * External dependencies
  */
-import React from 'react';
-import { get, omit } from 'lodash';
+import React from "react";
+import { get, omit } from "lodash";
 
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
+import { __ } from "@wordpress/i18n";
 import {
   AnglePickerControl,
   BaseControl,
   ToolbarGroup
-} from '@wordpress/components';
+} from "@wordpress/components";
 
 /**
  * Internal dependencies
  */
-import { LinearGradientIcon, RadialGradientIcon } from './icons';
-import CustomGradientBar from './custom-gradient-bar';
-import { getGradientParsed } from './utils';
-import { serializeGradient } from './serializer';
+import { LinearGradientIcon, RadialGradientIcon } from "./icons";
+import CustomGradientBar from "./custom-gradient-bar";
+import { getGradientParsed } from "./utils";
+import { serializeGradient } from "./serializer";
 import {
   DEFAULT_LINEAR_GRADIENT_ANGLE,
   HORIZONTAL_GRADIENT_ORIENTATION
-} from './constants';
+} from "./constants";
 
 const GradientAnglePicker = ({ gradientAST, hasGradient, onChange }) => {
   const angle = get(
     gradientAST,
-    ['orientation', 'value'],
+    ["orientation", "value"],
     DEFAULT_LINEAR_GRADIENT_ANGLE
   );
   const onAngleChange = newAngle => {
@@ -37,7 +37,7 @@ const GradientAnglePicker = ({ gradientAST, hasGradient, onChange }) => {
       serializeGradient({
         ...gradientAST,
         orientation: {
-          type: 'angular',
+          type: "angular",
           value: newAngle
         }
       })
@@ -45,7 +45,7 @@ const GradientAnglePicker = ({ gradientAST, hasGradient, onChange }) => {
   };
   return (
     <AnglePickerControl
-      value={hasGradient ? angle : ''}
+      value={hasGradient ? angle : ""}
       onChange={onAngleChange}
     />
   );
@@ -60,7 +60,7 @@ const GradientTypePicker = ({ gradientAST, hasGradient, onChange }) => {
         ...(gradientAST.orientation
           ? {}
           : { orientation: HORIZONTAL_GRADIENT_ORIENTATION }),
-        type: 'linear-gradient'
+        type: "linear-gradient"
       })
     );
   };
@@ -68,28 +68,28 @@ const GradientTypePicker = ({ gradientAST, hasGradient, onChange }) => {
   const onSetRadialGradient = () => {
     onChange(
       serializeGradient({
-        ...omit(gradientAST, ['orientation']),
-        type: 'radial-gradient'
+        ...omit(gradientAST, ["orientation"]),
+        type: "radial-gradient"
       })
     );
   };
 
   return (
     <BaseControl className="components-custom-gradient-picker__type-picker">
-      <BaseControl.VisualLabel>{__('Type')}</BaseControl.VisualLabel>
+      <BaseControl.VisualLabel>{__("Type")}</BaseControl.VisualLabel>
       <ToolbarGroup
         className="components-custom-gradient-picker__toolbar"
         controls={[
           {
             icon: <LinearGradientIcon />,
-            title: __('Linear Gradient'),
-            isActive: hasGradient && type === 'linear-gradient',
+            title: __("Linear Gradient"),
+            isActive: hasGradient && type === "linear-gradient",
             onClick: onSetLinearGradient
           },
           {
             icon: <RadialGradientIcon />,
-            title: __('Radial Gradient'),
-            isActive: hasGradient && type === 'radial-gradient',
+            title: __("Radial Gradient"),
+            isActive: hasGradient && type === "radial-gradient",
             onClick: onSetRadialGradient
           }
         ]}
@@ -110,7 +110,7 @@ export default function CustomGradientPicker({ value, onChange }) {
           hasGradient={hasGradient}
           onChange={onChange}
         />
-        {type === 'linear-gradient' && (
+        {type === "linear-gradient" && (
           <GradientAnglePicker
             gradientAST={gradientAST}
             hasGradient={hasGradient}

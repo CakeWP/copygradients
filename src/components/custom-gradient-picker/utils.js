@@ -1,8 +1,8 @@
 /**
  * External dependencies
  */
-import { findIndex, map, some } from 'lodash';
-import gradientParser from 'gradient-parser';
+import { findIndex, map, some } from "lodash";
+import gradientParser from "gradient-parser";
 
 /**
  * Internal dependencies
@@ -13,22 +13,22 @@ import {
   MINIMUM_ABSOLUTE_LEFT_POSITION,
   MINIMUM_DISTANCE_BETWEEN_POINTS,
   HORIZONTAL_GRADIENT_ORIENTATION
-} from './constants';
+} from "./constants";
 import {
   serializeGradientColor,
   serializeGradientPosition,
   serializeGradient
-} from './serializer';
+} from "./serializer";
 
 function tinyColorRgbToGradientColorStop({ r, g, b, a }) {
   if (a === 1) {
     return {
-      type: 'rgb',
+      type: "rgb",
       value: [r, g, b]
     };
   }
   return {
-    type: 'rgba',
+    type: "rgba",
     value: [r, g, b, a]
   };
 }
@@ -40,7 +40,7 @@ export function getGradientWithColorStopAdded(
 ) {
   const colorStop = tinyColorRgbToGradientColorStop(rgbaColor);
   colorStop.length = {
-    type: '%',
+    type: "%",
     value: relativePosition
   };
   return {
@@ -144,7 +144,7 @@ export function getGradientWithColorAtPositionChanged(
     return (
       colorStop &&
       colorStop.length &&
-      colorStop.length.type === '%' &&
+      colorStop.length.type === "%" &&
       colorStop.length.value === relativePositionValue.toString()
     );
   });
@@ -197,7 +197,7 @@ export function getMarkerPoints(gradientAST) {
     return [];
   }
   return map(gradientAST.colorStops, colorStop => {
-    if (!colorStop || !colorStop.length || colorStop.length.type !== '%') {
+    if (!colorStop || !colorStop.length || colorStop.length.type !== "%") {
       return null;
     }
     return {
@@ -210,7 +210,7 @@ export function getMarkerPoints(gradientAST) {
 
 export function getLinearGradientRepresentationOfARadial(gradientAST) {
   return serializeGradient({
-    type: 'linear-gradient',
+    type: "linear-gradient",
     orientation: HORIZONTAL_GRADIENT_ORIENTATION,
     colorStops: gradientAST.colorStops
   });

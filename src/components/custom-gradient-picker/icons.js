@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 /**
  * WordPress dependencies
  */
-import { withInstanceId } from '@wordpress/compose';
+import { withInstanceId } from "@wordpress/compose";
 import {
   Circle,
   LinearGradient,
@@ -11,7 +11,7 @@ import {
   RadialGradient,
   Stop,
   SVG
-} from '@wordpress/primitives';
+} from "@wordpress/primitives";
 
 /**
  * Internal dependencies

@@ -1,16 +1,21 @@
 /**
  * External dependencies
  */
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
 /**
  * WordPress dependencies
  */
-import { Component, useEffect, useRef } from '@wordpress/element';
-import { __, sprintf } from '@wordpress/i18n';
-import { useInstanceId } from '@wordpress/compose';
-import { Button, ColorPicker, Dropdown, KeyboardShortcuts } from '@wordpress/components';
+import { Component, useEffect, useRef } from "@wordpress/element";
+import { __, sprintf } from "@wordpress/i18n";
+import { useInstanceId } from "@wordpress/compose";
+import {
+  Button,
+  ColorPicker,
+  Dropdown,
+  KeyboardShortcuts
+} from "@wordpress/components";
 
 /**
  * Internal dependencies
@@ -23,12 +28,12 @@ import {
   getGradientWithPositionAtIndexIncreased,
   getHorizontalRelativeGradientPosition,
   isControlPointOverlapping
-} from './utils';
+} from "./utils";
 import {
   COLOR_POPOVER_PROPS,
   GRADIENT_MARKERS_WIDTH,
   MINIMUM_SIGNIFICANT_MOVE
-} from './constants';
+} from "./constants";
 
 class ControlPointKeyboardMove extends Component {
   constructor() {
@@ -89,16 +94,16 @@ function ControlPointButton({
       <Button
         aria-label={sprintf(
           // translators: %1$s: gradient position e.g: 70%, %2$s: gradient color code e.g: rgb(52,121,151).
-          __('Gradient control point at position %1$s with color code %2$s.'),
+          __("Gradient control point at position %1$s with color code %2$s."),
           position,
           color
         )}
         aria-describedby={descriptionId}
         aria-expanded={isOpen}
         className={classnames(
-          'components-custom-gradient-picker__control-point-button',
+          "components-custom-gradient-picker__control-point-button",
           {
-            'is-active': isOpen
+            "is-active": isOpen
           }
         )}
         style={{
@@ -108,7 +113,7 @@ function ControlPointButton({
       />
       <div className="screen-reader-text" id={descriptionId}>
         {__(
-          'Use your left or right arrow keys or drag and drop with the mouse to change the gradient position. Press the button to change the color or remove the control point.'
+          "Use your left or right arrow keys or drag and drop with the mouse to change the gradient position. Press the button to change the color or remove the control point."
         )}
       </div>
     </ControlPointKeyboardMove>
@@ -171,8 +176,8 @@ export default function ControlPoints({
       controlPointMoveState.current &&
       controlPointMoveState.current.listenersActivated
     ) {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mouseup', cleanEventListeners);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", cleanEventListeners);
       onStopControlPointChange();
       controlPointMoveState.current.listenersActivated = false;
     }
@@ -195,7 +200,7 @@ export default function ControlPoints({
             <ControlPointButton
               key={index}
               className={
-                'components-button components-custom-gradient-picker__control-point-button control-point-button' +
+                "components-button components-custom-gradient-picker__control-point-button control-point-button" +
                 index
               }
               onClick={() => {
@@ -217,8 +222,8 @@ export default function ControlPoints({
                     listenersActivated: true
                   };
                   onStartControlPointChange();
-                  window.addEventListener('mousemove', onMouseMove);
-                  window.addEventListener('mouseup', cleanEventListeners);
+                  window.addEventListener("mousemove", onMouseMove);
+                  window.addEventListener("mouseup", cleanEventListeners);
                 }
               }}
               isOpen={isOpen}
@@ -249,17 +254,17 @@ export default function ControlPoints({
                 }}
                 isLink
               >
-                {__('Remove Control Point')}
+                {__("Remove Control Point")}
               </Button>
             </>
           )}
           popoverProps={{
             className:
-              'components-custom-gradient-picker__color-picker-popover',
-            position: 'top',
+              "components-custom-gradient-picker__color-picker-popover",
+            position: "top",
             onFocusOutside: () => {
-			  document.querySelector('.control-point-button' + index).click();
-			  onStopControlPointChange();
+              document.querySelector(".control-point-button" + index).click();
+              onStopControlPointChange();
             }
           }}
         />

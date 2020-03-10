@@ -2,63 +2,60 @@
  * External dependencies
  */
 import React, { Component, Fragment } from "react";
-import { map, omit } from 'lodash';
-import tinycolor from 'tinycolor2';
-import FileCopy from '@material-ui/icons/FileCopy';
-import {
-  Tooltip,
-  ClipboardButton
-} from '@wordpress/components';
+import { map, omit } from "lodash";
+import tinycolor from "tinycolor2";
+import FileCopy from "@material-ui/icons/FileCopy";
+import { Tooltip, ClipboardButton } from "@wordpress/components";
 
 /**
  * Internal dependencies
  */
-import { getGradientParsed } from './utils';
-import { serializeGradient } from './serializer';
-import data from './gradients.json';
-import './styles/style.scss';
+import { getGradientParsed } from "./utils";
+import { serializeGradient } from "./serializer";
+import data from "./gradients.json";
+import "./styles/style.scss";
 
 class GradientsList extends Component {
-	constructor() {
-		super(...arguments);
-		this.categorizedData = this.categorizedData.bind(this);
-		
-			this.state = {
-				linear: {},
-				radial: {},
-				type: 'linear',
-				date: '',
-				message: '',
-				copied: false,
-			};
-	}
+  constructor() {
+    super(...arguments);
+    this.categorizedData = this.categorizedData.bind(this);
 
-	componentDidMount(){
-		this.categorizedData();
-	}
+    this.state = {
+      linear: {},
+      radial: {},
+      type: "linear",
+      date: "",
+      message: "",
+      copied: false
+    };
+  }
 
-	categorizedData(){
-		map(data, ( gradients, type ) => {
-			gradients.sort(function() {
-				return .5 - Math.random();
-			});
-			this.setState({ [type]: gradients });
-		})
-	}
+  componentDidMount() {
+    this.categorizedData();
+  }
 
-	render() {
-		const { type } = this.state;
-		return (
+  categorizedData() {
+    map(data, (gradients, type) => {
+      gradients.sort(function() {
+        return 0.5 - Math.random();
+      });
+      this.setState({ [type]: gradients });
+    });
+  }
+
+  render() {
+    const { type } = this.state;
+    return (
       <Fragment>
         <div className="max-w-screen-xl w-full mx-auto">
           <div className="gradients-list flex flex-wrap py-10 px-5 -mx-5 sm:-mx-4 md:-mx-4">
             {map(this.state[type], (gradient, key) => {
-              let { gradientAST, gradientValue } = getGradientParsed(
+              const { gradientAST, gradientValue } = getGradientParsed(
                 gradient.css
               );
-              let colors = serializeGradient({
-                ...omit(gradientAST[0], ['orientation']),
-                type: type + '-gradient'
+              const colors = serializeGradient({
+                ...omit(gradientAST[0], ["orientation"]),
+                type: type + "-gradient"
               });
 
               return (
@@ -93,13 +90,13 @@ class GradientsList extends Component {
                           this.setState({
                             copied: true,
                             date: new Date(),
-                            message: 'Copied gradient CSS to your clipboard.'
+                            message: "Copied gradient CSS to your clipboard."
                           });
                         }}
                       >
                         <FileCopy
                           className="fill-current w-4 h-4 mr-2"
-                          style={{ width: '1rem', height: '1rem' }}
+                          style={{ width: "1rem", height: "1rem" }}
                         />
                         <span>Copy Gradient</span>
                       </ClipboardButton>
@@ -112,7 +109,7 @@ class GradientsList extends Component {
         </div>
       </Fragment>
     );
-	}
+  }
 }
 
 export default GradientsList;

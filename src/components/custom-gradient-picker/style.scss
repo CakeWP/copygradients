@@ -1,6 +1,7 @@
 $components-custom-gradient-picker__padding: 3px; // 24px container, 18px handles inside, that leaves 6px padding, half of which is 3.
 $grid-unit-10: 10px;
 $button-size-small: 24px;
+
 .components-custom-gradient-picker {
 	margin-top: $grid-unit-10;
 }
@@ -80,6 +81,7 @@ $button-size-small: 24px;
 }
 
 .components-custom-gradient-picker .components-custom-gradient-picker__ui-line {
+
 	.components-base-control.components-angle-picker,
 	.components-base-control.components-custom-gradient-picker__type-picker {
 		margin-bottom: 0;
@@ -95,7 +97,9 @@ $button-size-small: 24px;
 	}
 
 	button {
+
 		&.is-pressed {
+
 			> svg {
 				background: $white;
 				border: 1px solid $dark-gray-200;
