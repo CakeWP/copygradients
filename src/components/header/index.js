@@ -2,11 +2,24 @@
  * External dependencies
  */
 import React, { Component, Fragment } from 'react';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '@material-ui/icons/GitHub';
+
+/**
+ * Internal dependencies
+ */
+import GradientBuilder from '../builder';
 
 class Header extends Component {
+  constructor() {
+	super(...arguments);
 
-	render() {
-		return (
+	this.state = {
+		isOpen: false,
+	};
+  }
+  render() {
+    return (
       <Fragment>
         <header className="bg-white border-b border-gray-200">
           <nav class="flex items-center justify-between flex-wrap p-6 max-w-screen-xl w-full mx-auto">
@@ -18,35 +31,40 @@ class Header extends Component {
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
               <div class="text-sm lg:flex-grow">
                 <a
-                  href="#responsive-header"
-                  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-4"
+                  href="https://twitter.com/copygradients"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-3"
                 >
-                  Docs
+                  <TwitterIcon style={{ width: '1.25rem' }} />
                 </a>
                 <a
-                  href="#responsive-header"
-                  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-4"
+                  href="https://github.com/phpbits/copygradients"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-3"
                 >
-                  Examples
-                </a>
-                <a
-                  href="#responsive-header"
-                  class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500"
-                >
-                  Blog
+                  <GitHubIcon style={{ width: '1.25rem' }} />
                 </a>
               </div>
               <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Button
+				<button 
+					className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-4"
+					onClick={()=>{
+						this.setState({ isOpen: true });
+					}}
+				>
+                  Gradients Builder
+                </button>
+                <button class="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded">
+                  Submit Gradients
                 </button>
               </div>
             </div>
           </nav>
         </header>
+        {this.state.isOpen && <GradientBuilder onClose={()=>{
+			this.setState({ isOpen: false });
+		}} />}
       </Fragment>
     );
-	}
+  }
 }
 
 export default Header;

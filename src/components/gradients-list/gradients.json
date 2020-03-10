@@ -58,7 +58,7 @@
 			"css": "linear-gradient(165deg, rgb(21, 26, 35) 85%, rgb(255, 216, 151) 85%)"
 		},
 		{
-			"css": "linear-gradient(130deg,rgb(61, 15, 102) 30%,rgb(255, 255, 255) 30%)"
+			"css": "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)"
 		}
 	],
 	"radial":[]
