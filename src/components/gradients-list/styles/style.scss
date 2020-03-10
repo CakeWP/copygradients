@@ -1,0 +1,19 @@
+.gradients-list{
+	padding: 20px;
+	.gradient{
+		display: block;
+		width: 100%;
+		height: 200px;
+	}
+
+	.gradient--colors{
+		.arrow{
+			color: #444;
+			padding: 0 5px;
+		}
+	}
+
+	.gradient--inner{
+		height: 100%;
+	}
+}
