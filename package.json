@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
@@ -15,8 +16,10 @@
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
+    "lint-js": "eslint src/**/*.js",
+    "lint-js:fix": "eslint src/**/*.js --fix",
+    "lint-css": "stylelint '**/*.scss'",
+    "lint-css:fix": "npm run lint-css -- --fix",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
     "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
   },
@@ -43,6 +46,8 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-react": "^7.19.0",
     "postcss-cli": "^7.1.0",
+    "stylelint": "^13.2.1",
+    "stylelint-config-wordpress": "^16.0.0",
     "tailwindcss": "^1.2.0"
   }
 }
