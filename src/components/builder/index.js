@@ -2,9 +2,10 @@
  * External dependencies
  */
 import React, { Component, Fragment } from "react";
+import FileCopy from '@material-ui/icons/FileCopy';
 import {
   Modal,
-  Button
+  ClipboardButton,
   //   __experimentalCustomGradientPicker as GradientPicker
 } from "@wordpress/components";
 
@@ -31,10 +32,10 @@ class GradientBuilder extends Component {
           title="Gradients Builder"
           onRequestClose={onClose}
         >
-          <div className="flex flex-wrap h-full w-full">
+          <div className="flex flex-wrap h-full w-full gradient-builder">
             <div className="w-3/4 h-full pr-10 gradient-preview">
               <div
-                className="h-full w-full"
+                className="h-full w-full rounded-md"
                 style={{ backgroundImage: this.state.value }}
               ></div>
             </div>
@@ -48,6 +49,28 @@ class GradientBuilder extends Component {
               <p className="text-xs text-gray-500">
                 Click on the colorbar to add/edit colors.
               </p>
+              <div className="bg-gray-800 py-3 px-4 mt-12 rounded-md text-green-300 text-xs code">
+                <span className="text-orange-300 ">
+                  {this.state.value.split('(')[0]}
+                </span>
+                {this.state.value.replace(this.state.value.split('(')[0], '')}
+              </div>
+              <ClipboardButton
+                text={this.state.value}
+                onCopy={() => {
+                  //   this.setState({
+                  //     copied: true,
+                  //     date: new Date(),
+                  //     message: 'Copied gradient CSS to your clipboard.'
+                  //   });
+                }}
+              >
+                <FileCopy
+                  className="fill-current w-4 h-4 mr-2"
+                  style={{ width: '1rem', height: '1rem' }}
+                />
+                <span>Copy Gradient</span>
+              </ClipboardButton>
             </div>
           </div>
         </Modal>

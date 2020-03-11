@@ -9,13 +9,15 @@
 @import "node_modules/@wordpress/components/src/tooltip/style.scss";
 @import "node_modules/@wordpress/components/src/modal/style.scss";
 @import "node_modules/@wordpress/components/src/button/style.scss";
-@import "node_modules/@wordpress/components/src/text-control/style.scss";
 @import "node_modules/@wordpress/components/src/angle-picker-control/style.scss";
 @import "node_modules/@wordpress/components/src/toolbar-group/style.scss";
 @import "node_modules/@wordpress/components/src/visually-hidden/style.scss";
 @import "node_modules/@wordpress/components/src/color-picker/style.scss";
 @import "src/components/custom-gradient-picker/style.scss";
 
+.code{
+	font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+}
 
 .screen-reader-text,
 .screen-reader-text span,
@@ -31,6 +33,19 @@
 	position: absolute;
 	width: 1px;
 	word-wrap: normal !important;
+}
+
+.gradient-builder{
+	.components-clipboard-button{
+		color: #fff;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		    padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		margin-top: 1.25rem;
+			border-radius: 0.25rem;
+			    background-color: #2a4365;
+	}
 }
 
 .gradient-preview {

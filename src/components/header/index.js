@@ -34,13 +34,13 @@ class Header extends Component {
                   href="https://twitter.com/copygradients"
                   className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-3"
                 >
-                  <TwitterIcon style={{ width: "1.25rem" }} />
+                  <TwitterIcon style={{ width: '1.25rem' }} />
                 </a>
                 <a
                   href="https://github.com/phpbits/copygradients"
                   className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-3"
                 >
-                  <GitHubIcon style={{ width: "1.25rem" }} />
+                  <GitHubIcon style={{ width: '1.25rem' }} />
                 </a>
               </div>
               <div>
@@ -61,8 +61,10 @@ class Header extends Component {
         </header>
         {this.state.isOpen && (
           <GradientBuilder
-            onClose={() => {
-              this.setState({ isOpen: false });
+            onClose={(e) => {
+				if (!e.target.classList.contains('components-clipboard-button')){
+					this.setState({ isOpen: false });
+				}
             }}
           />
         )}
