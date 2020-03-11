@@ -34,7 +34,7 @@ class GradientBuilder extends Component {
 		return (
 			<Fragment>
 				<Modal
-					className="w-full h-full"
+					className="w-full h-full rounded-sm"
 					title="Gradients Builder"
 					onRequestClose={onClose}
 				>

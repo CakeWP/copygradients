@@ -9,13 +9,15 @@ import GitHubIcon from "@material-ui/icons/GitHub";
  * Internal dependencies
  */
 import GradientBuilder from "../builder";
+import GradientSubmit from "../submit";
 
 class Header extends Component {
 	constructor() {
 		super(...arguments);
 
 		this.state = {
-			isOpen: false
+			isOpen: false,
+			showSubmit: false
 		};
 	}
 	render() {
@@ -52,7 +54,12 @@ class Header extends Component {
 								>
 									Gradients Builder
 								</button>
-								<button className="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded">
+								<button
+									className="bg-transparent hover:bg-blue-700 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded"
+									onClick={() => {
+										this.setState({ showSubmit: true });
+									}}
+								>
 									Submit Gradients
 								</button>
 							</div>
@@ -65,6 +72,13 @@ class Header extends Component {
 							if (!e.target.classList.contains("components-clipboard-button")) {
 								this.setState({ isOpen: false });
 							}
+						}}
+					/>
+				)}
+				{this.state.showSubmit && (
+					<GradientSubmit
+						onClose={e => {
+							this.setState({ showSubmit: false });
 						}}
 					/>
 				)}
