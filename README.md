@@ -16,8 +16,8 @@ Add your gradient colors in the RGB or RGBA format at the end of the json file. 
         …
     },
     {
-		"css": "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)"
-	}
+        "css": "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)"
+    }
 ]
 ```
 
