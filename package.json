@@ -57,6 +57,7 @@
     "gradient-parser": "^0.1.5",
     "lodash": "^4.17.15",
     "postcss-cli": "^7.1.0",
+    "styled-components": "^5.0.1",
     "stylelint": "^13.2.1",
     "stylelint-config-wordpress": "^16.0.0",
     "tailwindcss": "^1.2.0",

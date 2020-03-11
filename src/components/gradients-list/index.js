@@ -12,6 +12,7 @@ import { Tooltip, ClipboardButton } from "@wordpress/components";
  */
 import { getGradientParsed } from "./utils";
 import { serializeGradient } from "./serializer";
+import SimpleSnackbar from "../snackbar";
 import data from "./gradients.json";
 import "./styles/style.scss";
 
@@ -44,7 +45,7 @@ class GradientsList extends Component {
 	}
 
 	render() {
-		const { type } = this.state;
+		const { type, copied, date, message } = this.state;
 		return (
 			<Fragment>
 				<div className="max-w-screen-xl w-full mx-auto">
@@ -107,6 +108,7 @@ class GradientsList extends Component {
 						})}
 					</div>
 				</div>
+				{copied ? <SimpleSnackbar key={date} status={message} /> : null}
 			</Fragment>
 		);
 	}

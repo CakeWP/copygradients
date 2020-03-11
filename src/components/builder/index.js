@@ -14,17 +14,23 @@ import {
  */
 import "./styles/style.scss";
 import GradientPicker from "../gradient-picker";
+import SimpleSnackbar from "../snackbar";
 
 class GradientBuilder extends Component {
 	constructor() {
 		super(...arguments);
 
 		this.state = {
-			value: "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)"
+			copied: false,
+			value: "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)",
+			date: null,
+			message: ''
 		};
 	}
 	render() {
 		const { onClose } = this.props;
+		const { copied, value, date, message } = this.state;
+
 		return (
 			<Fragment>
 				<Modal
@@ -36,12 +42,12 @@ class GradientBuilder extends Component {
 						<div className="w-3/4 h-full pr-10 gradient-preview">
 							<div
 								className="h-full w-full rounded-md"
-								style={{ backgroundImage: this.state.value }}
+								style={{ backgroundImage: value }}
 							></div>
 						</div>
 						<div className="w-1/4">
 							<GradientPicker
-								value={this.state.value}
+								value={value}
 								onChange={newValue => {
 									this.setState({ value: newValue });
 								}}
@@ -51,18 +57,18 @@ class GradientBuilder extends Component {
 							</p>
 							<div className="bg-gray-800 py-3 px-4 mt-12 rounded-md text-green-300 text-xs code">
 								<span className="text-orange-300 ">
-									{this.state.value.split("(")[0]}
+									{value.split("(")[0]}
 								</span>
-								{this.state.value.replace(this.state.value.split("(")[0], "")}
+								{value.replace(value.split("(")[0], "")}
 							</div>
 							<ClipboardButton
-								text={this.state.value}
+								text={value}
 								onCopy={() => {
-									//   this.setState({
-									//     copied: true,
-									//     date: new Date(),
-									//     message: 'Copied gradient CSS to your clipboard.'
-									//   });
+									  this.setState({
+									    copied: true,
+									    date: new Date(),
+									    message: 'Copied gradient CSS to your clipboard.'
+									  });
 								}}
 							>
 								<FileCopy
@@ -74,6 +80,7 @@ class GradientBuilder extends Component {
 						</div>
 					</div>
 				</Modal>
+				{copied ? <SimpleSnackbar key={date} status={message} /> : null}
 			</Fragment>
 		);
 	}
