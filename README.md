@@ -16,5 +16,5 @@ Adding a gradient is easy. All you need to do is to create a Github issue and ad
 
 <p align="center">✌️</p>
 <p align="center">
-<sub><sup>A little project by <a href="https://twitter.com/phpbits">@phpbits</a></sup></sub>
+<sub><sup>Created by <a href="https://twitter.com/phpbits">@phpbits</a></sup></sub>
 </p>
