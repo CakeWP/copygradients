@@ -9,7 +9,7 @@ function App() {
 			<div className="App">
 				<GradientsList />
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</Fragment>
 	);
 }

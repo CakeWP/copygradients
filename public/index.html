@@ -7,7 +7,9 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="CopyGradients is an online tool that will enable you to easily
+          copy gradients to your clipboard then paste the code on Gutenberg
+          editor or any application."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,7 +26,28 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>CopyGradients | Copy & generate background gradients with ease.</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CopyGradients" />
+    <meta property="og:url" content="http://copygradients.com" />
+    <meta property="og:title" content="CopyGradients | Copy &amp; generate background gradients with ease." />
+    <meta property="og:description"
+      content="CopyGradients is an online tool that will enable you to easily
+          copy gradients to your clipboard then paste the code on Gutenberg
+          editor or any application." />
+    <meta property="og:image" content="%PUBLIC_URL%/banner.png" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@copygradients">
+    <meta name="twitter:title" content="CopyGradients | Copy &amp; generate background gradients with ease.">
+    <meta name="twitter:description"
+      content="CopyGradients is an online tool that will enable you to easily
+          copy gradients to your clipboard then paste the code on Gutenberg
+          editor or any application.">
+    <meta name="twitter:image" content="%PUBLIC_URL%/banner.png">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="630">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +62,37 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <div class="bg-black border-b border-gray-200 w-full py-10 px-10" style="background-image:linear-gradient(165deg, rgb(21, 26, 35) 85%, rgb(255, 216, 151) 85%)">
+      <div class="max-w-screen-xl w-full mx-auto">
+        <h2 class="text-5xl font-bold text-white">About</h2>
+        <p class="text-white text-xl py-5">
+          CopyGradients is an online tool that will enable you to easily
+          copy gradients to your clipboard then paste the code on Gutenberg
+          editor or any application. You can also generate your own
+          gradients using the builder provided.
+        </p>
+        <h2 class="text-5xl font-bold text-white pt-10">
+          Using WordPress?
+        </h2>
+        <p class="text-white text-xl py-5">
+          To easily copy and paste gradients on WordPress just install
+          the&nbsp;
+          <a href="https://editorskit.com" class="underline">
+            EditorsKit Plugin↗
+          </a>
+          which is available for free. With EditorsKit, you can enable the
+          copy & paste controls on the block that supports gradient like
+          button and cover blocks.
+        </p>
+        <p class="text-white text-xl py-5 sm:mb-20">
+          Made by
+          <a href="https://twitter.com/phpbits" class="underline">
+            Jeffrey Carandang↗
+          </a>
+          - creator of EditorsKit plugin for WordPress.
+        </p>
+      </div>
+    </div>
   </body>
 </html>

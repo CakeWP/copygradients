@@ -21,10 +21,6 @@ Add your gradient colors in the RGB or RGBA format at the end of the json file. 
 ]
 ```
 
-## License
-
-[MIT](https://github.com/ghosh/uiGradients/blob/master/LICENSE.md)
-
 &nbsp;
 
 <p align="center">✌️</p>
