@@ -67,6 +67,7 @@ function InsertPoint({
       )}
       renderContent={() => (
         <ColorPicker
+          disableAlpha
           onChangeComplete={({ rgb }) => {
             let newGradient;
             if (alreadyInsertedPoint) {
@@ -88,8 +89,8 @@ function InsertPoint({
         />
       )}
       popoverProps={{
-        className: "components-custom-gradient-picker__color-picker-popover",
-        position: "top",
+        className: 'components-custom-gradient-picker__color-picker-popover',
+        position: 'top',
         onFocusOutside: () => {
           onCloseInserter();
         }

@@ -21,4 +21,13 @@
 	.gradient--inner {
 		height: 100%;
 	}
+
+	.px-0{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.components-clipboard-button.components-button{
+		box-shadow: none !important;
+	}
 }

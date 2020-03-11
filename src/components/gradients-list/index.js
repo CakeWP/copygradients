@@ -84,19 +84,19 @@ class GradientsList extends Component {
                         })}
                       </span>
                       <ClipboardButton
-                        className="text-gray-700 hover:text-black py-2 mt-2 rounded inline-flex items-center"
+                        className="text-gray-700 hover:text-black py-2 px-0 mt-2 rounded inline-flex items-center hover:underline"
                         text={gradient.css}
                         onCopy={() => {
                           this.setState({
                             copied: true,
                             date: new Date(),
-                            message: "Copied gradient CSS to your clipboard."
+                            message: 'Copied gradient CSS to your clipboard.'
                           });
                         }}
                       >
                         <FileCopy
                           className="fill-current w-4 h-4 mr-2"
-                          style={{ width: "1rem", height: "1rem" }}
+                          style={{ width: '1rem', height: '1rem' }}
                         />
                         <span>Copy Gradient</span>
                       </ClipboardButton>

@@ -200,7 +200,7 @@ export default function ControlPoints({
             <ControlPointButton
               key={index}
               className={
-                "components-button components-custom-gradient-picker__control-point-button control-point-button" +
+                'components-button components-custom-gradient-picker__control-point-button control-point-button' +
                 index
               }
               onClick={() => {
@@ -222,8 +222,8 @@ export default function ControlPoints({
                     listenersActivated: true
                   };
                   onStartControlPointChange();
-                  window.addEventListener("mousemove", onMouseMove);
-                  window.addEventListener("mouseup", cleanEventListeners);
+                  window.addEventListener('mousemove', onMouseMove);
+                  window.addEventListener('mouseup', cleanEventListeners);
                 }
               }}
               isOpen={isOpen}
@@ -237,6 +237,7 @@ export default function ControlPoints({
           renderContent={({ onClose }) => (
             <>
               <ColorPicker
+                disableAlpha
                 color={point.color}
                 onChangeComplete={({ rgb }) => {
                   onChange(
@@ -254,16 +255,16 @@ export default function ControlPoints({
                 }}
                 isLink
               >
-                {__("Remove Control Point")}
+                {__('Remove Control Point')}
               </Button>
             </>
           )}
           popoverProps={{
             className:
-              "components-custom-gradient-picker__color-picker-popover",
-            position: "top",
+              'components-custom-gradient-picker__color-picker-popover',
+            position: 'top',
             onFocusOutside: () => {
-              document.querySelector(".control-point-button" + index).click();
+              document.querySelector('.control-point-button' + index).click();
               onStopControlPointChange();
             }
           }}

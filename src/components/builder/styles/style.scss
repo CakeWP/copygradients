@@ -9,24 +9,13 @@
 @import "node_modules/@wordpress/components/src/tooltip/style.scss";
 @import "node_modules/@wordpress/components/src/modal/style.scss";
 @import "node_modules/@wordpress/components/src/button/style.scss";
+@import "node_modules/@wordpress/components/src/text-control/style.scss";
 @import "node_modules/@wordpress/components/src/angle-picker-control/style.scss";
 @import "node_modules/@wordpress/components/src/toolbar-group/style.scss";
+@import "node_modules/@wordpress/components/src/visually-hidden/style.scss";
 @import "node_modules/@wordpress/components/src/color-picker/style.scss";
 @import "src/components/custom-gradient-picker/style.scss";
 
-.components-visually-hidden {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	word-wrap: normal !important;
-}
 
 .screen-reader-text,
 .screen-reader-text span,
@@ -48,7 +37,8 @@
 	max-height: calc(100% - 70px);
 }
 
-.components-angle-picker-control__input-field {
+.components-angle-picker-control__input-field,
+.components-text-control__input {
 	box-shadow: 0 0 0 transparent;
 	border-radius: 4px;
 	border: 1px solid #7e8993;
