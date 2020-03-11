@@ -64,7 +64,7 @@ class GradientsList extends Component {
 									key={key}
 									className="my-5 px-5 w-full sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/4 lg:w-1/4 xl:w-1/5"
 								>
-									<div className="max-w-sm rounded shadow-md hover:shadow-xl overflow-hidden gradient--inner flex flex-wrap">
+									<div className="rounded shadow-md hover:shadow-xl overflow-hidden gradient--inner flex flex-wrap">
 										<div
 											className="gradient"
 											style={{ backgroundImage: gradient.css }}

@@ -24,27 +24,25 @@ class Header extends Component {
 		return (
 			<Fragment>
 				<header className="bg-white border-b border-gray-200">
-					<nav className="flex items-center justify-between flex-wrap p-6 max-w-screen-xl w-full mx-auto">
-						<div className="flex items-center flex-shrink-0 text-blue-900 mr-6">
+					<nav className="flex items-center justify-center md:justify-between flex-wrap p-6 max-w-screen-xl w-full mx-auto">
+						<div className="flex items-center flex-shrink-0 text-blue-900 mr-6 mb-3 md:mb-0">
 							<a href="" className="font-semibold text-xl tracking-tight">
 								Copy Gradients
 							</a>
+							<a
+								href="https://twitter.com/copygradients"
+								className="block inline-block mt-0 text-gray-600 hover:text-blue-500 mx-3"
+							>
+								<TwitterIcon style={{ width: "1.25rem" }} />
+							</a>
+							<a
+								href="https://github.com/phpbits/copygradients"
+								className="block inline-block mt-0 text-gray-600 hover:text-blue-500 mr-3"
+							>
+								<GitHubIcon style={{ width: "1.25rem" }} />
+							</a>
 						</div>
-						<div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-							<div className="text-sm lg:flex-grow">
-								<a
-									href="https://twitter.com/copygradients"
-									className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-3"
-								>
-									<TwitterIcon style={{ width: "1.25rem" }} />
-								</a>
-								<a
-									href="https://github.com/phpbits/copygradients"
-									className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-blue-500 mr-3"
-								>
-									<GitHubIcon style={{ width: "1.25rem" }} />
-								</a>
-							</div>
+						<div className="flex-grow flex w-auto justify-center md:justify-end">
 							<div>
 								<button
 									className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-4"

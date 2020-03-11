@@ -34,18 +34,18 @@ class GradientBuilder extends Component {
 		return (
 			<Fragment>
 				<Modal
-					className="w-full h-full rounded-sm"
+					className="w-full h-full max-w-xl rounded-sm"
 					title="Gradients Builder"
 					onRequestClose={onClose}
 				>
-					<div className="flex flex-wrap h-full w-full gradient-builder">
-						<div className="w-3/4 h-full pr-10 gradient-preview">
+					<div className="flex flex-wrap h-full w-full gradient-builder content-start">
+						<div className="w-full md:w-3/4 h-12 md:h-full mb-5 md:mb-0 md:pr-10 gradient-preview">
 							<div
 								className="h-full w-full rounded-md"
 								style={{ backgroundImage: value }}
 							></div>
 						</div>
-						<div className="w-1/4">
+						<div className="w-full md:w-1/4">
 							<GradientPicker
 								value={value}
 								onChange={newValue => {
@@ -56,19 +56,17 @@ class GradientBuilder extends Component {
 								Click on the colorbar to add/edit colors.
 							</p>
 							<div className="bg-gray-800 py-3 px-4 mt-12 rounded-md text-green-300 text-xs code">
-								<span className="text-orange-300 ">
-									{value.split("(")[0]}
-								</span>
+								<span className="text-orange-300 ">{value.split("(")[0]}</span>
 								{value.replace(value.split("(")[0], "")}
 							</div>
 							<ClipboardButton
 								text={value}
 								onCopy={() => {
-									  this.setState({
-									    copied: true,
-									    date: new Date(),
-									    message: 'Copied gradient CSS to your clipboard.'
-									  });
+									this.setState({
+										copied: true,
+										date: new Date(),
+										message: "Copied gradient CSS to your clipboard."
+									});
 								}}
 							>
 								<FileCopy
