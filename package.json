@@ -27,7 +27,7 @@
     "lint-js": "eslint src/**/*.js",
     "lint-js:fix": "eslint src/**/*.js --fix",
     "lint-css": "stylelint '**/*.scss'",
-    "lint-css:fix": "npm run lint-css -- --fix",
+    "lint-css:fix": "npm run lint-css --fix",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
     "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
   },
