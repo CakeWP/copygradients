@@ -16,14 +16,14 @@ import { useCallback, useMemo } from "@wordpress/element";
 import CustomGradientPicker from "../custom-gradient-picker";
 
 export default function GradientPicker({
-  className,
-  gradients,
-  onChange,
-  value,
-  clearable = true,
-  disableCustomGradients = false
+	className,
+	gradients,
+	onChange,
+	value,
+	clearable = true,
+	disableCustomGradients = false
 }) {
-  const clearGradient = useCallback(() => onChange(undefined), [onChange]);
+	const clearGradient = useCallback(() => onChange(undefined), [onChange]);
 
-  return <CustomGradientPicker value={value} onChange={onChange} />;
+	return <CustomGradientPicker value={value} onChange={onChange} />;
 }
