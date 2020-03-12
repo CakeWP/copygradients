@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/copygradients/static/css/main.7d3a82d8.chunk.css",
+    "main.js": "/copygradients/static/js/main.83125389.chunk.js",
+    "main.js.map": "/copygradients/static/js/main.83125389.chunk.js.map",
+    "runtime-main.js": "/copygradients/static/js/runtime-main.b512c897.js",
+    "runtime-main.js.map": "/copygradients/static/js/runtime-main.b512c897.js.map",
+    "static/js/2.bebbd84d.chunk.js": "/copygradients/static/js/2.bebbd84d.chunk.js",
+    "static/js/2.bebbd84d.chunk.js.map": "/copygradients/static/js/2.bebbd84d.chunk.js.map",
+    "index.html": "/copygradients/index.html",
+    "precache-manifest.f4323ffa1245101c825d446663fdf68e.js": "/copygradients/precache-manifest.f4323ffa1245101c825d446663fdf68e.js",
+    "service-worker.js": "/copygradients/service-worker.js",
+    "static/css/main.7d3a82d8.chunk.css.map": "/copygradients/static/css/main.7d3a82d8.chunk.css.map",
+    "static/js/2.bebbd84d.chunk.js.LICENSE.txt": "/copygradients/static/js/2.bebbd84d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b512c897.js",
+    "static/js/2.bebbd84d.chunk.js",
+    "static/css/main.7d3a82d8.chunk.css",
+    "static/js/main.83125389.chunk.js"
+  ]
+}
