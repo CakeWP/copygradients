@@ -59,6 +59,15 @@
 		},
 		{
 			"css": "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)"
+		},
+		{
+			"css": "linear-gradient(110deg,rgb(0,12,34) 12%,rgb(0,0,0) 88%)"
+		},
+		{
+			"css": "linear-gradient(339deg,rgb(0,0,0) 56%,rgb(144,19,254) 0%)"
+		},
+		{
+			"css": "linear-gradient(14deg, rgba(226, 115, 36, 1) 20%, rgb(0, 181, 226) 74%)"
 		}
 	],
 	"radial":[]
