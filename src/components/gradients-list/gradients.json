@@ -67,7 +67,7 @@
 			"css": "linear-gradient(339deg,rgb(0,0,0) 56%,rgb(144,19,254) 0%)"
 		},
 		{
-			"css": "linear-gradient(14deg, rgba(226, 115, 36, 1) 20%, rgb(0, 181, 226) 74%)"
+			"css": "linear-gradient(14deg, rgba(226, 115, 36, 0.8) 20%, rgba(0, 181, 226, 0.8) 74%)"
 		}
 	],
 	"radial":[]
