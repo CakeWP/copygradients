@@ -72,10 +72,16 @@ class GradientsList extends Component {
 										<div className="px-6 py-4 text-xs text-gray-500 gradient--colors break-words flex flex-wrap content-between">
 											<span className="block">
 												{map(colors, (color, pos) => {
+													let tiny = tinycolor(color);
+													let toHex = tiny.toHexString();
+													let getAlpha = tiny.getAlpha();
+													if ( getAlpha === 0 ){
+														toHex = 'transparent';
+													}
 													return (
 														<Fragment key={pos}>
 															<span className="inline-block">
-																{tinycolor(color).toHexString()}
+																{ toHex }
 															</span>
 															{pos !== colors.length - 1 ? (
 																<span className="inline-block arrow">→</span>
