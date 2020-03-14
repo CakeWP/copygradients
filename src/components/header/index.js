@@ -75,7 +75,7 @@ class Header extends Component {
 				)}
 				{this.state.showSubmit && (
 					<GradientSubmit
-						onClose={e => {
+						onClose={() => {
 							this.setState({ showSubmit: false });
 						}}
 					/>

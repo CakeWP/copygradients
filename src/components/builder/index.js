@@ -24,7 +24,7 @@ class GradientBuilder extends Component {
 			copied: false,
 			value: "linear-gradient(90deg,rgb(0,198,255) 0%,rgb(0,114,255) 100%)",
 			date: null,
-			message: ''
+			message: ""
 		};
 	}
 	render() {

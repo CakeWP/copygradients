@@ -2,10 +2,7 @@
  * External dependencies
  */
 import React, { Component, Fragment } from "react";
-import {
-	Modal,
-	Button
-} from "@wordpress/components";
+import { Modal } from "@wordpress/components";
 
 /**
  * Internal dependencies
@@ -13,9 +10,6 @@ import {
 // import "./styles/style.scss";
 
 class GradientSubmit extends Component {
-	constructor() {
-		super(...arguments);
-	}
 	render() {
 		const { onClose } = this.props;
 
@@ -36,6 +30,7 @@ class GradientSubmit extends Component {
 						<a
 							href="https://github.com/phpbits/copygradients#contributing"
 							target="_blank"
+							rel="noopener noreferrer"
 							className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-4 mt-5"
 						>
 							Tell me more ↗

@@ -74,17 +74,15 @@ class GradientsList extends Component {
 										<div className="px-6 py-4 text-xs text-gray-500 gradient--colors break-words flex flex-wrap content-between">
 											<span className="block">
 												{map(colors, (color, pos) => {
-													let tiny = tinycolor(color);
+													const tiny = tinycolor(color);
 													let toHex = tiny.toHexString();
-													let getAlpha = tiny.getAlpha();
-													if ( getAlpha === 0 ){
-														toHex = 'transparent';
+													const getAlpha = tiny.getAlpha();
+													if (getAlpha === 0) {
+														toHex = "transparent";
 													}
 													return (
 														<Fragment key={pos}>
-															<span className="inline-block">
-																{ toHex }
-															</span>
+															<span className="inline-block">{toHex}</span>
 															{pos !== colors.length - 1 ? (
 																<span className="inline-block arrow">→</span>
 															) : null}
@@ -114,9 +112,7 @@ class GradientsList extends Component {
 								</div>
 							);
 						})}
-						<div
-							className="my-5 px-5 w-full sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/4 lg:w-1/4 xl:w-1/5 gradient-list-submit"
-						>
+						<div className="my-5 px-5 w-full sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/4 lg:w-1/4 xl:w-1/5 gradient-list-submit">
 							<div className="rounded overflow-hidden gradient--inner flex flex-wrap items-center justify-center border border-solid border-gray-300 bg-gray-200">
 								<button
 									className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-4"

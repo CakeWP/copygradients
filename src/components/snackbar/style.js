@@ -19,5 +19,5 @@ export const SnackbarContent = styled(SnackbarContentBase)`
 export const InfoWrapper = styled.span`
 	display: flex;
 	align-items: center;
-	z-index:9999999999;
+	z-index: 9999999999;
 `;

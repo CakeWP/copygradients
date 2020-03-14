@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 
-import {
-	Snackbar,
-	SnackbarContent,
-	InfoWrapper
-} from "./style";
+import { Snackbar, SnackbarContent, InfoWrapper } from "./style";
 
 function SimpleSnackbar({ status, msg }) {
 	const [open, setOpen] = React.useState(true);
