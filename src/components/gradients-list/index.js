@@ -13,6 +13,7 @@ import { Tooltip, ClipboardButton } from "@wordpress/components";
 import { getGradientParsed } from "./utils";
 import { serializeGradient } from "./serializer";
 import SimpleSnackbar from "../snackbar";
+import GradientSubmit from "../submit";
 import data from "./gradients.json";
 import "./styles/style.scss";
 
@@ -27,7 +28,8 @@ class GradientsList extends Component {
 			type: "linear",
 			date: "",
 			message: "",
-			copied: false
+			copied: false,
+			showSubmit: false
 		};
 	}
 
@@ -112,9 +114,30 @@ class GradientsList extends Component {
 								</div>
 							);
 						})}
+						<div
+							className="my-5 px-5 w-full sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/4 lg:w-1/4 xl:w-1/5 gradient-list-submit"
+						>
+							<div className="rounded overflow-hidden gradient--inner flex flex-wrap items-center justify-center border border-solid border-gray-300 bg-gray-200">
+								<button
+									className="bg-blue-900 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mr-4"
+									onClick={() => {
+										this.setState({ showSubmit: true });
+									}}
+								>
+									Submit Gradients
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 				{copied ? <SimpleSnackbar key={date} status={message} /> : null}
+				{this.state.showSubmit && (
+					<GradientSubmit
+						onClose={e => {
+							this.setState({ showSubmit: false });
+						}}
+					/>
+				)}
 			</Fragment>
 		);
 	}
