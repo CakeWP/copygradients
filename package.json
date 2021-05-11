@@ -59,7 +59,7 @@
     "eslint-plugin-react": "^7.19.0",
     "gh-pages": "^2.2.0",
     "gradient-parser": "^0.1.5",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "postcss-cli": "^7.1.0",
     "styled-components": "^5.0.1",
     "stylelint": "^13.2.1",
